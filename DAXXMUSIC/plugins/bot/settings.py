@@ -1,5 +1,4 @@
 from pyrogram import filters
-from DAXXMUSIC.utils import bot_sys_stats
 from pyrogram.enums import ChatType
 from pyrogram.errors import MessageNotModified
 from pyrogram.types import (
@@ -8,7 +7,10 @@ from pyrogram.types import (
     InlineKeyboardMarkup,
     Message,
 )
+from DAXXMUSIC.misc import _boot_
+from DAXXMUSIC.plugins.sudo.sudoers import sudoers_list
 from DAXXMUSIC.utils.database import get_served_chats, get_served_users, get_sudoers
+from DAXXMUSIC.utils import bot_sys_stats
 from DAXXMUSIC.utils.database import (
     add_served_chat,
     add_served_user,
@@ -17,7 +19,9 @@ from DAXXMUSIC.utils.database import (
     is_banned_user,
     is_on_off,
 )
+from pyrogram.types import InputMediaVideo
 from DAXXMUSIC import app
+import random
 from DAXXMUSIC.utils.database import (
     add_nonadmin_chat,
     get_authuser,
@@ -400,3 +404,17 @@ async def vote_change(client, CallbackQuery, _):
         )
     except MessageNotModified:
         return
+
+
+@app.on_callback_query(filters.regex("gib_source"))
+async def gib_repo_callback(_, callback_query):
+    await callback_query.edit_message_media(
+        media=InputMediaVideo("https://telegra.ph/file/41ec4455034f1d8d634ff.mp4", has_spoiler=True),
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [close_button]
+            ]
+        ),
+    )
+
+close_button = InlineKeyboardButton("• ᴄʟᴏsᴇ •", callback_data="close")
