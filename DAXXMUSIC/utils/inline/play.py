@@ -52,8 +52,8 @@ def stream_markup_timer(_, chat_id, played, dur):
         bar = "▰▱▱▱▱▱▱▱Ⓘ︎▰"
     else:
         bar = "▰▱▱▱▱▱▱▱▰Ⓒ︎"
-    buttons = [
-                [
+       buttons = [
+        [
             InlineKeyboardButton(
                 text=f"{played} {bar} {dur}",
                 callback_data="GetTimer",
@@ -62,12 +62,30 @@ def stream_markup_timer(_, chat_id, played, dur):
         [
             InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
             InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
+            InlineKeyboardButton(text="↻", callback_data=f"ADMIN Replay|{chat_id}"),
             InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
             InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
+        ],
+        [
+            InlineKeyboardButton(
+                text="✪ʟɪꜰᴇ✪",
+                url=f"https://t.me/angel_world11",
+            ),
+            InlineKeyboardButton(
+                text="✪ᴊᴀɴɴ✪",
+                url=f"https://t.me/mr_editx",
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="✪ᴏᴡɴᴇʀ✪",
+                url=f"t.me/{OWNER_USERNAME}",
+            ),
         ],
         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
     ]
     return buttons
+        
 
 
 def stream_markup(_, chat_id):
@@ -75,12 +93,40 @@ def stream_markup(_, chat_id):
         [
             InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
             InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
+            InlineKeyboardButton(text="↻", callback_data=f"ADMIN Replay|{chat_id}"),
             InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
             InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
-        ],  
+        ],
+                 [
+            InlineKeyboardButton(
+
+                text="✪ʟɪꜰᴇ✪",
+
+                url=f"https://t.me/angel_world11",
+
+            ),
+            InlineKeyboardButton(
+
+                text="✪ᴊᴀɴɴ✪",
+
+                url=f"https://t.me/mr_editx",
+
+            ),
+        ],
+
+                 [
+            InlineKeyboardButton(
+
+                text="✪ᴏᴡɴᴇʀ✪",
+
+                url=f"t.me/{OWNER_USERNAME}",
+
+            ),
+        ],
         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
     ]
     return buttons
+    
 
 
 def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
@@ -152,4 +198,3 @@ def slider_markup(_, videoid, user_id, query, query_type, channel, fplay):
         ],
     ]
     return buttons
-                  
