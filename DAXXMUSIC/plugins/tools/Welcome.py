@@ -11,6 +11,7 @@ from DAXXMUSIC import app
 from DAXXMUSIC.CutDb.Weldb import *
 from config import LOGGER_ID
 
+
 LOGGER = getLogger(__name__)
 
 
@@ -121,23 +122,40 @@ async def greet_group(_, member: ChatMemberUpdated):
             photo=welcomeimg,
             caption= f"""
 **
-ㅤㅤㅤ◦•●◉✿ ᴡᴇʟᴄᴏᴍᴇ ʙᴀʙʏ ✿◉●•◦
-▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▰
+⁣❅────✦ ᴡᴇʟᴄᴏᴍᴇ ✦────❅
 
-● ɴᴀᴍᴇ ➥  {user.mention}
-● ᴜsᴇʀɴᴀᴍᴇ ➥  @{user.username}
-● ᴜsᴇʀ ɪᴅ ➥  {user.id}
+▰▰▰▰▰▰▰▰▰▰▰▰▰
+     
+       ╔═══ஜ۩۞۩ஜ═══╗
+        {member.chat.title}
+       ╚═══ஜ۩۞۩ஜ═══╝  
+     
+▰▰▰▰▰▰▰▰▰▰▰▰▰
 
-❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ [๛ʟ ᴏ ᴠ ᴇ ʀ-ᴍ ᴜ s ɪ ᴄ ࿐](https://t.me/LOVER_X_MUSIC_BOT)**
+ ❅𝐍𝐚𝐦𝐞 ➳  {user.mention}
+ ❅𝐔𝐬𝐞𝐫 𝐍𝐚𝐦𝐞 ➳ @{user.username}
+ ❅𝐔𝐬𝐞𝐫 𝐈𝐝  ➳ {user.id}
 
-▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▰
+▰▰▰▰▰▰▰▰▰▰▰▰▰
+
+💞 𝐓𝐡𝐚𝐧𝐤 𖨆 𝐘𝐨𝐮 𝐅𝐨𝐫 𝐉𝐨𝐢𝐧
+
+🌷 𝐈𝐟 𝐘𝐨𝐮 𝐇𝐚𝐯𝐞 : 𝐀𝐧𝐲 𝐏𝐫𝐨𝐛𝐥𝐞𝐦𝐬
+🌹 𝐓𝐡𝐞𝐧 𝐃𝐌 𝐓𝐨:𝐀𝐝𝐦𝐢𝐧
+▰▰▰▰▰▰▰▰▰▰▰▰▰
+
+        ⇆  ◁ㅤㅤ❚❚ㅤㅤ▷  ↻
+•┈┈┈••┈┈┈••••●••••┈┈┈••┈┈┈•
+**
 """,
 reply_markup=InlineKeyboardMarkup(
 [
-[InlineKeyboardButton(f"ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ", url=f"https://t.me/LOVER_X_MUSIC_BOT?startgroup=new"),
+[
+    InlineKeyboardButton(f"๏ ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ!", url=f"https://t.me/LOVER_X_MUSIC_BOT?startgroup=true"),
+    InlineKeyboardButton(f"๏ ᴏᴡɴᴇʀ !", url=f"https://t.me/PAWAN_IS_BACK"),
 ]
 ]
-))
+)
 
     except Exception as e:
         LOGGER.error(e)
